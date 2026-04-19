@@ -1,21 +1,22 @@
-# AI Content Generator - Backend
+# SalesCraft AI - Backend
 
-REST API untuk aplikasi AI Content Generator, dibangun dengan Laravel 11 dan Laravel Sanctum untuk autentikasi berbasis token.
+REST API untuk aplikasi SalesCraft AI — generator sales page berbasis AI, dibangun dengan Laravel 11 dan Laravel Sanctum untuk autentikasi berbasis token.
 
 ## Tech Stack
 
 - **Laravel 11** - PHP framework
 - **Laravel Sanctum** - token-based authentication
 - **MySQL** - database
-- **Groq API** (llama-3.3-70b)  - AI utama untuk generate konten
-- **Gemini API** (2.5-flash) - fallback jika Groq tidak tersedia
+- **Groq API** (llama-3.3-70b) - AI utama untuk generate sales page
+- **Gemini API** (gemini-2.5-flash) - fallback jika Groq tidak tersedia
 
 ## Fitur
 
 - Register & login dengan token auth (Sanctum)
-- Generate konten AI berdasarkan: content type, topik, keywords, target audience, tone, dan bahasa
+- Generate sales page AI berdasarkan: nama produk, deskripsi, fitur, target audience, harga, dan USP
+- Output berupa structured JSON yang dirender oleh 3 template (Modern, Minimal, Bold)
 - Riwayat generasi per user (CRUD)
-- Search & filter riwayat berdasarkan topik, tipe, atau keywords
+- Search riwayat berdasarkan nama produk atau deskripsi
 - Pagination
 
 ## Cara Menjalankan Lokal
@@ -47,7 +48,7 @@ Server berjalan di `http://localhost:8000`
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=ai_content_generator
+DB_DATABASE=salescraft_ai
 DB_USERNAME=root
 DB_PASSWORD=
 
@@ -65,8 +66,8 @@ FRONTEND_URL=http://localhost:3000
 | POST | `/api/login` | Login, return token |
 | POST | `/api/logout` | Logout (butuh token) |
 | GET | `/api/me` | Info user yang login |
-| GET | `/api/generations` | List riwayat (support `?search=` & `?type=`) |
-| POST | `/api/generations` | Generate konten baru |
+| GET | `/api/generations` | List riwayat (support `?search=`) |
+| POST | `/api/generations` | Generate sales page baru |
 | GET | `/api/generations/{id}` | Detail satu generasi |
 | DELETE | `/api/generations/{id}` | Hapus generasi |
 
