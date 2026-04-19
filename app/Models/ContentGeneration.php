@@ -9,14 +9,14 @@ class ContentGeneration extends Model
 {
     protected $fillable = [
         'user_id',
-        'content_type',
-        'topic',
-        'keywords',
+        'product_name',
+        'description',
+        'features',
         'target_audience',
-        'tone',
-        'language',
-        'generated_content',
-        'word_count',
+        'price',
+        'usp',
+        'generated_json',
+        'style_template',
     ];
 
     public function user(): BelongsTo
