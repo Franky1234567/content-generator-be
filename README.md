@@ -1,14 +1,14 @@
-# AI Content Generator — Backend
+# AI Content Generator - Backend
 
 REST API untuk aplikasi AI Content Generator, dibangun dengan Laravel 11 dan Laravel Sanctum untuk autentikasi berbasis token.
 
 ## Tech Stack
 
-- **Laravel 11** — PHP framework
-- **Laravel Sanctum** — token-based authentication
-- **MySQL** — database
-- **Groq API** (llama-3.3-70b) — AI utama untuk generate konten
-- **Gemini API** (2.5-flash) — fallback jika Groq tidak tersedia
+- **Laravel 11** - PHP framework
+- **Laravel Sanctum** - token-based authentication
+- **MySQL** - database
+- **Groq API** (llama-3.3-70b)  - AI utama untuk generate konten
+- **Gemini API** (2.5-flash) - fallback jika Groq tidak tersedia
 
 ## Fitur
 
